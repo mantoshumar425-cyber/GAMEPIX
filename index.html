@@ -2,831 +2,223 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#050817">
-<meta name="description" content="Play free online games on GAMEPIX. Discover puzzle, action, racing, adventure and arcade games.">
-<title>GAMEPIX — Play. Explore. Enjoy.</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070817">
+<title>GAMEPIX MAX — Play Beyond</title>
 <style>
-:root{
-  --bg:#050817;
-  --panel:#080f23;
-  --panel2:#0d1835;
-  --border:#1a2b57;
-  --text:#f4f6ff;
-  --muted:#9aadd4;
-  --purple:#803cff;
-  --blue:#315bff;
-}
+:root{--bg:#070817;--panel:#101329;--line:#272c53;--purple:#8b5cf6;--blue:#4361ff;--cyan:#39dcff;--text:#f7f7ff;--muted:#a5adcc}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif
-}
-button,input{font:inherit}
-button{cursor:pointer;color:inherit}
-a{color:inherit;text-decoration:none}
-button:focus-visible,a:focus-visible,input:focus-visible{
-  outline:2px solid #a77aff;outline-offset:3px
-}
-
-/* HEADER */
-.topbar{
-  position:sticky;top:0;z-index:20;
-  display:grid;grid-template-columns:auto minmax(120px,1fr) auto;
-  align-items:center;gap:16px;padding:11px 18px;
-  background:#060b1bf5;border-bottom:1px solid var(--border)
-}
-.logo{display:flex;align-items:center;gap:8px;white-space:nowrap}
-.logo-icon{font-size:30px}
-.logo-name{font-size:23px;font-weight:950;letter-spacing:-1px}
-.logo-name b{
-  background:linear-gradient(90deg,#fff,#a05dff);
-  color:transparent;background-clip:text
-}
-.logo small{display:block;font-size:7px;letter-spacing:2px;color:#a9b9dd}
-.search{
-  display:flex;align-items:center;gap:9px;
-  padding:10px 14px;border:1px solid #1a2e5e;
-  border-radius:30px;background:#0c1733;min-width:0
-}
-.search span{font-size:20px}
-.search input{
-  border:0;outline:0;background:transparent;color:white;
-  width:100%;min-width:0
-}
-.search input::placeholder{color:#899bc2}
-.toplinks{display:flex;align-items:center;gap:15px;font-size:12px;white-space:nowrap}
-.toplinks a{color:#dce5ff}
-.login{
-  border:0;border-radius:25px;padding:10px 14px;
-  background:linear-gradient(110deg,#793aff,#315cff);
-  font-size:12px;font-weight:800;white-space:nowrap
-}
-
-/* PAGE LAYOUT */
-.layout{
-  display:grid;grid-template-columns:155px minmax(0,1fr);
-  gap:14px;max-width:1600px;margin:auto;padding:14px
-}
-.sidebar{display:flex;flex-direction:column;gap:5px}
-.sideitem{
-  display:flex;align-items:center;gap:10px;padding:10px 11px;
-  border-radius:10px;color:#c3cfea;font-size:12px
-}
-.sideitem span{width:22px;text-align:center;font-size:18px}
-.sideitem.active{
-  background:linear-gradient(90deg,#5121a7,#101b45);
-  border-left:3px solid #c05cff;color:white
-}
-.sideitem:hover{background:#111b3a}
-.sidepromo{
-  margin-top:18px;padding:14px 11px;border:1px solid #40309e;
-  border-radius:14px;
-  background:radial-gradient(circle at 80% 100%,#28206b,#080e24 70%)
-}
-.sidepromo strong{display:block}
-.sidepromo p{color:var(--muted);font-size:11px}
-.promo-art{font-size:27px;text-align:center;margin-top:12px}
-.main{min-width:0}
-
-/* HERO */
-.hero{
-  min-height:205px;position:relative;overflow:hidden;
-  display:flex;align-items:center;padding:25px;
-  border:1px solid #1b3470;border-radius:17px;
-  background:
-    radial-gradient(ellipse at 82% 45%,#3824b4 0%,#14154f 36%,#07142d 76%)
-}
-.hero:after{
-  content:"🎮";position:absolute;right:8%;top:50%;
-  transform:translateY(-50%);font-size:clamp(80px,12vw,155px);
-  opacity:.8;filter:drop-shadow(0 0 28px #644aff)
-}
-.hero-content{position:relative;z-index:1;max-width:68%}
-.pill{
-  display:inline-block;padding:4px 10px;border-radius:20px;
-  border:1px solid #9e49ff;background:#211354;
-  font-size:10px;font-weight:800
-}
-.hero h1{
-  margin:10px 0;font-size:clamp(27px,4vw,45px);
-  line-height:1.02;letter-spacing:-1px
-}
-.hero h1 em{font-style:normal;color:#42d8ff}
-.hero p{margin:0 0 14px;color:#d0ddf6}
-.primary{
-  border:0;border-radius:25px;padding:11px 20px;
-  background:linear-gradient(100deg,#883aff,#365dff);font-weight:800
-}
-
-/* CATEGORY STRIP */
-.categories{
-  display:flex;gap:11px;overflow-x:auto;padding:13px 0;
-  scrollbar-width:none
-}
-.categories::-webkit-scrollbar{display:none}
-.cat{
-  flex:0 0 64px;text-align:center;color:#dbe4ff;
-  font-size:11px;cursor:pointer
-}
-.cat-icon{
-  height:51px;width:51px;margin:0 auto 5px;
-  display:grid;place-items:center;font-size:25px;
-  border:1px solid #253663;border-radius:13px;
-  background:linear-gradient(145deg,#17234d,#10132b)
-}
-.cat.active .cat-icon{
-  border-color:#a36aff;box-shadow:0 0 14px #773cff55
-}
-
-/* CONTENT */
-.content-grid{
-  display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:13px
-}
-.leftcol,.rightcol{display:flex;flex-direction:column;gap:13px;min-width:0}
-.panel{
-  min-width:0;padding:13px;border:1px solid var(--border);
-  border-radius:15px;background:linear-gradient(145deg,#080f24,#050a19)
-}
-.section-head{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:10px;margin-bottom:12px
-}
-.section-head h2{margin:0;font-size:18px}
-.section-head p{margin:2px 0 0;color:var(--muted);font-size:11px}
-.viewall{
-  padding:8px 10px;border:1px solid #1c3474;border-radius:10px;
-  background:#111f4c;font-size:11px;white-space:nowrap
-}
-.status{padding:9px 0;color:var(--muted);font-size:12px}
-.games{
-  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px
-}
-.game{
-  min-width:0;overflow:hidden;border:1px solid #24396b;
-  border-radius:12px;background:#0b1530
-}
-.cover{
-  aspect-ratio:1.2;display:grid;place-items:center;
-  overflow:hidden;background:linear-gradient(145deg,#1b3972,#291558);
-  font-size:35px
-}
-.cover img{width:100%;height:100%;object-fit:cover;display:block}
-.game-info{padding:7px}
-.game-name{
-  font-size:12px;font-weight:750;white-space:nowrap;
-  overflow:hidden;text-overflow:ellipsis
-}
-.game-cat{font-size:10px;color:#9cb7ff;margin:3px 0 7px}
-.play{
-  width:100%;border:0;border-radius:8px;padding:8px 3px;
-  font-size:10px;font-weight:850;
-  background:linear-gradient(90deg,#763cff,#345cff)
-}
-.game:hover{border-color:#7452ef;transform:translateY(-1px)}
-.game{transition:transform .15s,border-color .15s}
-
-/* NEW GAMES */
-.newgames{
-  display:flex;gap:9px;overflow-x:auto;scrollbar-width:none
-}
-.newgames::-webkit-scrollbar{display:none}
-.newgame{flex:0 0 105px;min-width:0;cursor:pointer}
-.newgame .cover{aspect-ratio:1.25;border-radius:10px}
-.newgame .game-name{margin-top:5px}
-
-/* TOTAL / LEADERBOARD */
-.total{
-  display:flex;align-items:center;gap:12px;padding:14px;
-  border:1px solid var(--border);border-radius:15px;
-  background:linear-gradient(110deg,#0c1938,#10103d)
-}
-.total-icon{
-  font-size:28px;padding:10px;border-radius:50%;background:#102957
-}
-.total small{display:block;color:var(--muted)}
-.total strong{display:block;font-size:24px}
-.ranktabs{display:flex;gap:5px;margin:10px 0}
-.ranktabs button{
-  flex:1;border:0;border-radius:20px;background:#111d3c;
-  padding:7px 3px;font-size:10px
-}
-.ranktabs button.active{background:linear-gradient(90deg,#773bff,#315dff)}
-.rankrow{
-  display:flex;align-items:center;gap:8px;padding:7px 0;
-  border-bottom:1px solid #111c37;font-size:11px
-}
-.rankrow:last-child{border:0}
-.ranknum{
-  width:21px;height:21px;display:grid;place-items:center;
-  background:#111f41;border-radius:50%
-}
-.avatar{font-size:18px}
-.rankname{flex:1;min-width:0}
-.points{color:#d7b7ff;white-space:nowrap}
-.benefits p{font-size:12px;margin:9px 0;color:#c4d3ef}
-.benefits p span{color:#39e58a;margin-right:7px}
-
-/* FOOTER */
-.footer{
-  border-top:1px solid var(--border);padding:18px;
-  display:flex;justify-content:space-between;align-items:center;
-  gap:14px;flex-wrap:wrap;color:var(--muted);font-size:11px
-}
-.footer nav{display:flex;gap:14px;flex-wrap:wrap}
-
-/* GAME PLAYER */
-.player-overlay{
-  position:fixed;inset:0;z-index:50;background:#000e;
-  display:none;align-items:center;justify-content:center;padding:10px
-}
-.player-overlay.open{display:flex}
-.playerbox{
-  width:min(100%,1100px);height:min(92dvh,760px);
-  display:flex;flex-direction:column;background:#070d20;
-  border:1px solid #344c91;border-radius:15px;overflow:hidden
-}
-.playerhead{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px;gap:10px
-}
-.playerhead strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.playerhead button{
-  flex-shrink:0;border:0;border-radius:8px;padding:8px 12px;background:#17244a
-}
-.playerbox iframe{width:100%;flex:1;border:0;background:#000}
-
-/* TABLET */
-@media(max-width:1000px){
-  .layout{grid-template-columns:1fr;padding:10px}
-  .sidebar{flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:6px}
-  .sidebar::-webkit-scrollbar{display:none}
-  .sideitem{flex:0 0 auto;padding:9px 12px;background:#0a1229}
-  .sidepromo{display:none}
-  .content-grid{grid-template-columns:1fr}
-  .rightcol{display:contents}
-  .total{order:0}
-  .leftcol{display:contents}
-  .leftcol>#popular{order:1}
-  .leftcol>#new{order:2}
-  .rightcol>.panel{order:3}
-  .games{grid-template-columns:repeat(4,minmax(0,1fr))}
-}
-
-/* MOBILE-FIRST LAYOUT */
-@media(max-width:560px){
-  .topbar{
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:9px;padding:9px 11px
-  }
-  .logo-icon{font-size:26px}
-  .logo-name{font-size:20px}
-  .logo small{font-size:6px}
-  .search{grid-column:1/-1;grid-row:2;padding:9px 12px}
-  .toplinks{display:none}
-  .login{padding:9px 11px;font-size:11px}
-  .layout{padding:9px;gap:9px}
-  .sidebar{margin:0 -1px}
-  .sideitem{font-size:11px;padding:8px 10px}
-  .sideitem span{font-size:16px;width:auto}
-  .hero{min-height:174px;padding:16px 13px;border-radius:13px}
-  .hero-content{max-width:79%}
-  .hero h1{font-size:27px}
-  .hero p{font-size:12px;max-width:225px}
-  .hero:after{font-size:76px;right:-15px;opacity:.48}
-  .primary{font-size:12px;padding:10px 15px}
-  .categories{gap:8px;padding:10px 0}
-  .cat{flex-basis:58px;font-size:10px}
-  .cat-icon{height:47px;width:47px;font-size:23px}
-  .content-grid{gap:9px}
-  .leftcol,.rightcol{gap:9px}
-  .panel{padding:10px;border-radius:13px}
-  .section-head h2{font-size:16px}
-  .section-head p{font-size:10px}
-  .viewall{font-size:10px;padding:7px}
-  .games{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-  .cover{aspect-ratio:1.22}
-  .game-info{padding:7px}
-  .game-name{font-size:12px}
-  .game-cat{font-size:10px}
-  .play{padding:8px;font-size:11px}
-  .newgame{flex-basis:94px}
-  .total{padding:11px;gap:10px}
-  .total strong{font-size:21px}
-  .total small{font-size:10px}
-  .total-icon{font-size:24px;padding:8px}
-  .rankrow{font-size:11px}
-  .footer{padding:16px 12px}
-  .footer nav{gap:11px}
-  .playerbox{height:94dvh;border-radius:10px}
-}
+body{margin:0;background:radial-gradient(ellipse at top,#15123b 0,#070817 48%);color:var(--text);font:14px system-ui,Arial,sans-serif}
+button,input{font:inherit}button{cursor:pointer;color:inherit}
+header{position:sticky;top:0;z-index:5;background:#090b1cf2;backdrop-filter:blur(15px);border-bottom:1px solid var(--line);padding:11px;display:grid;grid-template-columns:1fr auto;gap:10px}
+.brand{font-size:21px;font-weight:1000;letter-spacing:-1px}.brand span{color:var(--cyan)}.tag{font-size:8px;color:#aab4dc;letter-spacing:2px}
+.search{grid-column:1/-1;display:flex;gap:9px;align-items:center;background:#141832;border:1px solid #34345e;border-radius:14px;padding:11px}
+.search input{background:none;border:0;outline:0;color:white;width:100%;min-width:0}
+button{border:1px solid #37375f;background:#151a37;border-radius:12px;padding:9px 12px}
+.sign{background:linear-gradient(110deg,#8b5cf6,#4361ff);border:0;font-weight:800}
+main{padding:12px;max-width:1200px;margin:auto}
+.hero{position:relative;overflow:hidden;border:1px solid #343779;border-radius:22px;padding:20px 16px;background:radial-gradient(circle at 90% 45%,#4b24b6,#171746 40%,#0d1531 75%);min-height:190px}
+.hero:after{content:"🎮";position:absolute;right:-5px;top:40px;font-size:90px;filter:drop-shadow(0 0 18px #9870ff);opacity:.75}
+.badge{display:inline-block;background:#311c66;border:1px solid #8858ff;border-radius:30px;padding:5px 10px;font-size:10px;font-weight:800}
+h1{font-size:31px;line-height:1.05;letter-spacing:-1px;margin:13px 0;position:relative;z-index:1}
+h1 span{color:var(--cyan)}.hero p{max-width:230px;color:#d1d7fa;font-size:12px}
+.cta{background:linear-gradient(100deg,#8b5cf6,#4361ff);border:0;font-weight:900;border-radius:30px;padding:11px 17px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.stat{padding:12px 8px;background:linear-gradient(145deg,#151a3a,#0c1025);border:1px solid var(--line);border-radius:14px;text-align:center}
+.stat b{display:block;font-size:19px;color:var(--cyan)}.stat small{font-size:10px;color:var(--muted)}
+.catbar{display:flex;gap:8px;overflow:auto;padding:5px 0 13px;scrollbar-width:none}
+.catbar button{flex:0 0 auto;font-size:11px;border-radius:30px;padding:9px 12px}
+.catbar button.active{background:linear-gradient(100deg,#8b5cf6,#4361ff);border-color:transparent}
+.heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:18px 0 12px}
+.heading h2{font-size:18px;margin:0}.heading small{color:var(--muted)}
+.games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{min-width:0;overflow:hidden;background:linear-gradient(145deg,#171b39,#0d1127);border:1px solid #2a315d;border-radius:15px;transition:.2s}
+.card:active{transform:scale(.98)}
+.thumb{aspect-ratio:1.2;display:grid;place-items:center;background:linear-gradient(145deg,#293e85,#40216d);font-size:38px;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.info{padding:9px}.name{font-size:12px;font-weight:800;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.genre{font-size:10px;color:#9fbdff;margin:4px 0 9px}
+.actions{display:flex;gap:6px}.play{flex:1;background:linear-gradient(100deg,#8b5cf6,#4361ff);border:0;font-weight:900;font-size:11px;padding:9px 4px}.like{width:38px;padding:6px;color:#ff70ba;font-size:18px}
+.panel{margin-top:13px;padding:14px;border:1px solid var(--line);border-radius:16px;background:#0d1126}
+.panel h2{font-size:16px;margin:0 0 12px}.rank{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #222747;font-size:12px}.rank:last-child{border:0}
+.newgames{display:flex;gap:9px;overflow:auto}.mini{flex:0 0 100px;cursor:pointer}.mini .thumb{border-radius:10px}.mini .name{margin-top:6px}
+.load{width:100%;margin-top:12px;padding:13px;background:linear-gradient(100deg,#8b5cf6,#4361ff);border:0;border-radius:12px;font-weight:900}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:24px 12px}
+.modal{display:none;position:fixed;inset:0;background:#000c;z-index:20;align-items:center;justify-content:center;padding:15px}
+.modal.show{display:flex}.box{width:100%;max-width:380px;background:#10152e;border:1px solid #48417c;border-radius:18px;padding:18px}
+.box input{display:block;width:100%;margin:9px 0;padding:12px;background:#080c1d;border:1px solid #343b65;border-radius:10px;color:white}
+.box p{color:var(--muted);font-size:12px}
+.player{display:none;position:fixed;inset:0;background:#000e;z-index:15;padding:10px}
+.player.show{display:flex;flex-direction:column}
+.playerbar{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px;background:#11152b}
+.player iframe{width:100%;flex:1;border:0;background:black}
+@media(min-width:750px){header{display:flex;align-items:center;padding:13px 4%;gap:20px}.search{flex:1;max-width:520px}.hero{padding:35px;min-height:240px}.hero:after{font-size:145px;right:8%;top:30px}h1{font-size:45px}.games{grid-template-columns:repeat(4,minmax(0,1fr))}main{padding:20px}.thumb{aspect-ratio:1.35}}
 </style>
 </head>
-
 <body>
-<header class="topbar">
-  <a class="logo" href="#" aria-label="GAMEPIX home">
-    <span class="logo-icon">🎮</span>
-    <span><span class="logo-name"><b>GAMEPIX</b></span>
-    <small>PLAY · EXPLORE · ENJOY</small></span>
-  </a>
-
-  <label class="search">
-    <span>⌕</span>
-    <input id="search" placeholder="Search games..." autocomplete="off">
-  </label>
-
-  <nav class="toplinks">
-    <a href="#popular">👑 Top Games</a>
-    <a href="#new">🔥 Trending</a>
-    <a href="#popular">💗 Favorites</a>
-  </nav>
-
-  <button class="login" id="loginBtn">♙ Login / Sign Up</button>
+<header>
+  <div><div class="brand">GAMEPIX <span>MAX</span></div><div class="tag">PLAY BEYOND LIMITS</div></div>
+  <button id="favToggle">♥ <span id="favCount">0</span></button>
+  <button class="sign" id="openAuth">♙ Sign In</button>
+  <label class="search">⌕ <input id="search" placeholder="Search thousands of games…"></label>
 </header>
 
-<div class="layout">
-  <aside class="sidebar" aria-label="Game categories">
-    <a class="sideitem active" href="#" data-category=""><span>⌂</span>Home</a>
-    <a class="sideitem" href="#popular" data-category=""><span>🎮</span>All Games</a>
-    <a class="sideitem" href="#popular" data-category="Action"><span>🎯</span>Action</a>
-    <a class="sideitem" href="#popular" data-category="Adventure"><span>⛰️</span>Adventure</a>
-    <a class="sideitem" href="#popular" data-category="Puzzle"><span>🧩</span>Puzzle</a>
-    <a class="sideitem" href="#popular" data-category="Racing"><span>🚩</span>Racing</a>
-    <a class="sideitem" href="#popular" data-category="Sports"><span>⚽</span>Sports</a>
-    <a class="sideitem" href="#popular" data-category="Arcade"><span>🕹️</span>Arcade</a>
-    <a class="sideitem" href="#popular" data-category="Strategy"><span>🛡️</span>Strategy</a>
-    <a class="sideitem" href="#popular" data-category="Shooting"><span>🎯</span>Shooting</a>
-    <a class="sideitem" href="#popular" data-category="Girls"><span>💗</span>Girls</a>
-    <a class="sideitem" href="#popular" data-category=""><span>•••</span>More</a>
+<main>
+  <section class="hero">
+    <span class="badge">✦ YOUR NEXT LEVEL STARTS HERE</span>
+    <h1>PLAY MORE.<br><span>DISCOVER EVERYTHING.</span></h1>
+    <p>Find your next obsession in a universe of free browser games.</p>
+    <button class="cta" onclick="document.querySelector('#gameSection').scrollIntoView({behavior:'smooth'})">▶ Explore Games</button>
+  </section>
 
-    <div class="sidepromo">
-      <strong>🚀 Play Anywhere</strong>
-      <p>On your phone, tablet or computer. No installs. Just play!</p>
-      <div class="promo-art">🎮 💻 📱</div>
-    </div>
-  </aside>
+  <div class="stats">
+    <div class="stat"><b id="total">0</b><small>Games Loaded</small></div>
+    <div class="stat"><b id="likes">0</b><small>Your Favorites</small></div>
+    <div class="stat"><b>∞</b><small>Fun Unlocked</small></div>
+  </div>
 
-  <main class="main">
-    <section class="hero">
-      <div class="hero-content">
-        <span class="pill">FEATURED</span>
-        <h1>THOUSANDS OF<br><em>FREE GAMES</em></h1>
-        <p>Play the best games from GamePix — all in one place!</p>
-        <button class="primary" onclick="document.querySelector('#popular').scrollIntoView({behavior:'smooth'})">
-          ▶ Start Playing
-        </button>
-      </div>
-    </section>
+  <nav class="catbar" id="catbar">
+    <button class="active" data-cat="">🎮 All Games</button>
+    <button data-cat="puzzle">🧩 Puzzle</button>
+    <button data-cat="action">🎯 Action</button>
+    <button data-cat="racing">🏎️ Racing</button>
+    <button data-cat="sport">⚽ Sports</button>
+    <button data-cat="strategy">🛡️ Strategy</button>
+    <button data-cat="adventure">⛰️ Adventure</button>
+    <button data-cat="arcade">🕹️ Arcade</button>
+  </nav>
 
-    <nav class="categories" aria-label="Browse categories">
-      <a class="cat" href="#popular" data-category="Puzzle"><div class="cat-icon">🧩</div>Puzzle</a>
-      <a class="cat" href="#popular" data-category="Racing"><div class="cat-icon">🚩</div>Racing</a>
-      <a class="cat" href="#popular" data-category="Action"><div class="cat-icon">🎯</div>Action</a>
-      <a class="cat" href="#popular" data-category="Adventure"><div class="cat-icon">⛰️</div>Adventure</a>
-      <a class="cat" href="#popular" data-category="Sports"><div class="cat-icon">⚽</div>Sports</a>
-      <a class="cat" href="#popular" data-category="Arcade"><div class="cat-icon">🕹️</div>Arcade</a>
-      <a class="cat" href="#popular" data-category="Strategy"><div class="cat-icon">🛡️</div>Strategy</a>
-      <a class="cat" href="#popular" data-category="Shooting"><div class="cat-icon">🎯</div>Shooting</a>
-      <a class="cat" href="#popular" data-category="Girls"><div class="cat-icon">💗</div>Girls</a>
-      <a class="cat" href="#popular" data-category=""><div class="cat-icon">•••</div>More</a>
-    </nav>
+  <section id="gameSection">
+    <div class="heading"><div><h2 id="gameHeading">🔥 Discover Games</h2><small id="status">Connecting to GamePix…</small></div><button id="random">⤨ Random</button></div>
+    <div class="games" id="games"></div>
+    <p id="empty" style="display:none;text-align:center;padding:20px;color:#a5adcc">No games found. Try another search.</p>
+    <button class="load" id="loadMore">Load More Games ↓</button>
+  </section>
 
-    <div class="content-grid">
-      <div class="leftcol">
-        <section class="panel" id="popular">
-          <div class="section-head">
-            <div>
-              <h2>🔥 Popular Games</h2>
-              <p>Explore games from the GamePix feed</p>
-            </div>
-            <button class="viewall" id="viewAll">View All →</button>
-          </div>
-          <div class="status" id="status" role="status">Loading GamePix games…</div>
-          <div class="games" id="games"></div>
-        </section>
+  <section class="panel">
+    <h2>✨ Fresh Discoveries</h2>
+    <div class="newgames" id="newgames"></div>
+  </section>
+  <section class="panel">
+    <h2>🏆 Community Leaderboard <small style="color:#9ca9d1;font-size:10px">DEMO</small></h2>
+    <div class="rank"><span>👑 1. PlayerPro</span><b>1250 XP</b></div>
+    <div class="rank"><span>🥈 2. GameMaster</span><b>980 XP</b></div>
+    <div class="rank"><span>🥉 3. PixelKing</span><b>870 XP</b></div>
+    <p style="font-size:11px;color:#a5adcc;margin-top:10px">Demo scores only — no real player ranking.</p>
+  </section>
+  <section class="panel">
+    <h2>💜 Why GAMEPIX MAX?</h2>
+    <p style="color:#b8c4e8;line-height:2">✓ Free browser games<br>✓ Mobile-friendly game player<br>✓ Save favorite games on this device<br>✓ Discover games automatically while scrolling</p>
+  </section>
+</main>
+<footer>GAMEPIX MAX · Play responsibly · Game catalog supplied by GamePix</footer>
 
-        <section class="panel" id="new">
-          <div class="section-head">
-            <div><h2>⭐ New Games</h2><p>More games to discover</p></div>
-          </div>
-          <div class="newgames" id="newgames"></div>
-        </section>
-      </div>
-
-      <aside class="rightcol">
-        <section class="total">
-          <div class="total-icon">🎮</div>
-          <div>
-            <small>Total Games Loaded</small>
-            <strong id="total">—</strong>
-            <small>GamePix Catalog</small>
-          </div>
-        </section>
-
-        <section class="panel">
-          <div class="section-head">
-            <h2>🏆 Leaderboard</h2>
-            <span style="font-size:10px;color:#aebfe2">DEMO</span>
-          </div>
-          <div class="ranktabs">
-            <button class="active" type="button">Today</button>
-            <button type="button">Weekly</button>
-            <button type="button">All Time</button>
-          </div>
-          <div class="rankrow"><span class="ranknum">👑</span><span class="avatar">🧑🏻</span><span class="rankname">PlayerPro</span><span class="points">🏆 1250</span></div>
-          <div class="rankrow"><span class="ranknum">2</span><span class="avatar">🧑🏽</span><span class="rankname">GameMaster</span><span class="points">♟ 980</span></div>
-          <div class="rankrow"><span class="ranknum">3</span><span class="avatar">🧑🏼</span><span class="rankname">PixelKing</span><span class="points">♟ 870</span></div>
-          <div class="rankrow"><span class="ranknum">4</span><span class="avatar">🧑🏾</span><span class="rankname">CrazyGamer</span><span class="points">♟ 760</span></div>
-          <div class="rankrow"><span class="ranknum">5</span><span class="avatar">🧑🏻</span><span class="rankname">ShadowPlay</span><span class="points">♟ 690</span></div>
-        </section>
-
-        <section class="panel benefits">
-          <h2>💜 Why Play Here?</h2>
-          <p><span>✔</span>Free games to explore</p>
-          <p><span>✔</span>No installation needed for browser games</p>
-          <p><span>✔</span>Designed for mobile and desktop</p>
-          <p><span>✔</span>Catalog can refresh from the feed</p>
-        </section>
-      </aside>
-    </div>
-  </main>
+<div class="modal" id="authModal">
+ <div class="box">
+  <button id="closeAuth" style="float:right">✕</button>
+  <h2 id="authHeading">Welcome, Gamer!</h2>
+  <p>Demo sign-in only. This does not create a real online account.</p>
+  <input id="username" placeholder="Gamer name" maxlength="24">
+  <input id="email" type="email" placeholder="Email (demo only)">
+  <input id="password" type="password" placeholder="Any demo password">
+  <button class="cta" id="signIn" style="width:100%">Sign In / Sign Up</button>
+  <p id="authMsg" style="margin-top:10px"></p>
+  <button id="logout" style="margin-top:8px;display:none">Sign out</button>
+ </div>
 </div>
 
-<footer class="footer">
-  <a class="logo" href="#">
-    <span class="logo-icon">🎮</span>
-    <span><span class="logo-name"><b>GAMEPIX</b></span><small>PLAY · EXPLORE · ENJOY</small></span>
-  </a>
-  <nav>
-    <a href="#">Home</a><a href="#popular">All Games</a>
-    <a href="#popular">Categories</a><a href="#new">New Games</a>
-  </nav>
-  <span>© GAMEPIX · Game feed powered</span>
-</footer>
-
-<div class="player-overlay" id="player" aria-hidden="true">
-  <div class="playerbox">
-    <div class="playerhead">
-      <strong id="playerTitle">Playing game</strong>
-      <button type="button" id="closePlayer">✕ Close</button>
-    </div>
-    <iframe id="frame" allow="fullscreen; autoplay; gamepad" allowfullscreen title="Game player"></iframe>
-  </div>
+<div class="player" id="player">
+ <div class="playerbar"><b id="playingTitle">Playing…</b><button id="closePlayer">✕ Close</button></div>
+ <iframe id="frame" allow="fullscreen; autoplay; gamepad" allowfullscreen title="Game player"></iframe>
 </div>
 
 <script>
-/*
-  Your GamePix Publisher feed.
-  If the browser blocks this request due to CORS, use the optional
-  same-origin /api/games proxy route described after this code.
-*/
-const GAMEPIX_FEED =
-  'https://feeds.gamepix.com/v2/json?sid=MX192&pagination=96&page=';
-
-const gamesEl = document.getElementById('games');
-const newEl = document.getElementById('newgames');
-const statusEl = document.getElementById('status');
-const searchEl = document.getElementById('search');
-const totalEl = document.getElementById('total');
-
-let allGames = [];
-let activeCategory = '';
-let showAll = false;
-
-function pick(obj, keys) {
-  for (const key of keys) {
-    const value = obj && obj[key];
-    if (typeof value === 'string' && value.trim()) return value.trim();
-    if (typeof value === 'number') return String(value);
-  }
-  return '';
+(() => {
+const FEED='https://feeds.gamepix.com/v2/json?sid=MX192&pagination=96&page=';
+const PROXY=''; // If direct feed is blocked, put your Cloudflare Worker URL here.
+const $=id=>document.getElementById(id);
+let games=[],page=0,lastPage=0,loading=false,finished=false,showFavs=false,category='';
+let favorites=new Set(JSON.parse(localStorage.getItem('gpm-favs')||'[]'));
+let recent=JSON.parse(localStorage.getItem('gpm-recent')||'[]');
+const icons=['💎','🪐','🏰','🌱','🧟','🚀','🌈','🎈','🎱','✈️','🧩','⚔️'];
+const key=g=>String(g.id||g.slug||g.title+'|'+g.url);
+function pick(o,keys){for(const k of keys)if(o[k])return o[k];return ''}
+function normalize(o){return {id:o.id||o.game_id||o.slug,title:String(pick(o,['title','name','game_name'])||'Untitled Game'),url:String(pick(o,['embed_url','play_url','game_url','url','link'])||''),image:String(pick(o,['image','thumbnail','image_url','thumbnail_url','cover'])||''),category:String(pick(o,['category','genre','categories','type'])||'Other').replace(/[_-]/g,' ')}}
+function extract(d){if(Array.isArray(d))return d;for(const x of [d.games,d.items,d.data,d.results]){if(Array.isArray(x))return x;if(x&&Array.isArray(x.items))return x.items}return []}
+async function loadPage(){
+ if(loading||finished)return;loading=true;$('loadMore').textContent='Loading games…';
+ try{
+  const url=PROXY?PROXY+(PROXY.includes('?')?'&':'?')+'page='+(page+1):FEED+(page+1);
+  const r=await fetch(url);if(!r.ok)throw Error('HTTP '+r.status);
+  const d=await r.json(),items=extract(d).map(normalize);
+  if(!items.length)throw Error('No games returned');
+  const seen=new Set(games.map(key));let added=0;
+  for(const g of items)if(!seen.has(key(g))){games.push(g);seen.add(key(g));added++}
+  page++;lastPage=Number(d.pagination?.last_page||d.last_page||d.total_pages||0);
+  if(items.length<96||(lastPage&&page>=lastPage)||added===0)finished=true;
+  $('status').textContent=games.length.toLocaleString()+' games loaded · page '+page+(lastPage?' / '+lastPage:'');
+  render();
+ }catch(e){
+  $('status').textContent=games.length? 'More games could not load. Check feed/proxy.':'Feed unavailable: browser CORS may require a Worker proxy.';
+  console.error(e);
+ }finally{loading=false;$('loadMore').textContent=finished?'All available games loaded':'Load More Games ↓';$('loadMore').disabled=finished}
 }
-
-function imageFrom(item) {
-  return pick(item, [
-    'image','thumbnail','thumb','image_url','thumbnail_url',
-    'cover','picture','banner','imageUrl','thumbnailUrl'
-  ]);
+function card(g,i,mini=false){
+ const el=document.createElement(mini?'div':'article');el.className=mini?'mini':'card';
+ const thumb=document.createElement('div');thumb.className='thumb';thumb.textContent=icons[i%icons.length];
+ if(g.image){const im=document.createElement('img');im.src=g.image;im.alt=g.title;im.loading='lazy';im.onerror=()=>im.remove();thumb.replaceChildren(im)}
+ el.appendChild(thumb);
+ const info=document.createElement('div');if(!mini)info.className='info';
+ const name=document.createElement('div');name.className='name';name.textContent=g.title;info.appendChild(name);
+ if(!mini){
+  const genre=document.createElement('div');genre.className='genre';genre.textContent=g.category;info.appendChild(genre);
+  const actions=document.createElement('div');actions.className='actions';
+  const play=document.createElement('button');play.className='play';play.textContent='▶ PLAY';play.onclick=()=>openGame(g);
+  const like=document.createElement('button');like.className='like';like.textContent=favorites.has(key(g))?'♥':'♡';like.onclick=()=>toggleLike(g);
+  actions.append(play,like);info.appendChild(actions);
+ }else el.onclick=()=>openGame(g);
+ el.appendChild(info);return el;
 }
-
-function urlFrom(item) {
-  return pick(item, [
-    'embed_url','embedUrl','play_url','playUrl','game_url',
-    'gameUrl','url','link','iframe_url','iframeUrl'
-  ]);
+function filtered(){
+ const q=$('search').value.toLowerCase().trim();
+ return games.filter(g=>(!q||(g.title+' '+g.category).toLowerCase().includes(q))&&(!category||g.category.toLowerCase().includes(category))&&(!showFavs||favorites.has(key(g))));
 }
-
-function categoriesFrom(item) {
-  let value = item.category || item.genre || item.categories || item.tags || 'Arcade';
-  if (Array.isArray(value)) value = value.join(' ');
-  if (typeof value !== 'string') value = 'Arcade';
-  return value;
+function render(){
+ const list=filtered();$('games').replaceChildren(...list.map(card));
+ $('empty').style.display=list.length?'none':'block';
+ $('total').textContent=games.length.toLocaleString();$('likes').textContent=favorites.size;$('favCount').textContent=favorites.size;
+ $('gameHeading').textContent=showFavs?'♥ Your Favorites':category?'🎮 '+category[0].toUpperCase()+category.slice(1):'🔥 Discover Games';
+ $('newgames').replaceChildren(...games.slice(-12).reverse().map((g,i)=>card(g,i,true)));
 }
-
-function normalize(item) {
-  return {
-    title: pick(item, ['title','name','game_name','gameName']) || 'Untitled Game',
-    url: urlFrom(item),
-    image: imageFrom(item),
-    category: categoriesFrom(item),
-    raw: item
-  };
+function toggleLike(g){const k=key(g);favorites.has(k)?favorites.delete(k):favorites.add(k);localStorage.setItem('gpm-favs',JSON.stringify([...favorites]));render()}
+function openGame(g){
+ if(!g.url){alert('This game has no play URL in the feed.');return}
+ try{const u=new URL(g.url,location.href);if(!/^https?:$/.test(u.protocol))throw Error();$('frame').src=u.href;$('playingTitle').textContent=g.title;$('player').classList.add('show');document.body.style.overflow='hidden';recent=[key(g),...recent.filter(x=>x!==key(g))].slice(0,20);localStorage.setItem('gpm-recent',JSON.stringify(recent))}
+ catch{alert('Invalid game URL')}
 }
-
-/* Accepts common JSON feed response shapes. */
-function extractItems(data) {
-  if (Array.isArray(data)) return data;
-
-  const possible = [
-    data && data.games,
-    data && data.items,
-    data && data.data,
-    data && data.results,
-    data && data.feed,
-    data && data.game_list
-  ];
-
-  for (const value of possible) {
-    if (Array.isArray(value)) return value;
-    if (value && typeof value === 'object') {
-      if (Array.isArray(value.items)) return value.items;
-      if (Array.isArray(value.games)) return value.games;
-    }
-  }
-
-  return [];
-}
-
-function categoryMatches(game, category) {
-  return !category ||
-    game.category.toLowerCase().includes(category.toLowerCase());
-}
-
-function createGameCard(game, index, compact = false) {
-  const card = document.createElement('article');
-  card.className = compact ? 'newgame' : 'game';
-
-  const cover = document.createElement('div');
-  cover.className = 'cover';
-
-  const fallbackIcons = ['💎','🪐','🏰','🌱','🧟','🚀','🌈','🎈','🎱','✈️'];
-  cover.textContent = fallbackIcons[index % fallbackIcons.length];
-
-  if (game.image) {
-    const img = document.createElement('img');
-    img.src = game.image;
-    img.alt = game.title;
-    img.loading = 'lazy';
-    img.referrerPolicy = 'no-referrer';
-    img.onerror = () => {
-      img.remove();
-      if (!cover.querySelector('img')) {
-        cover.textContent = fallbackIcons[index % fallbackIcons.length];
-      }
-    };
-    cover.textContent = '';
-    cover.appendChild(img);
-  }
-
-  card.appendChild(cover);
-
-  const info = document.createElement('div');
-  info.className = compact ? '' : 'game-info';
-
-  const title = document.createElement('div');
-  title.className = 'game-name';
-  title.textContent = game.title;
-  title.title = game.title;
-  info.appendChild(title);
-
-  if (!compact) {
-    const category = document.createElement('div');
-    category.className = 'game-cat';
-    category.textContent = game.category.split(/[|,]/)[0] || 'Game';
-    info.appendChild(category);
-
-    const play = document.createElement('button');
-    play.className = 'play';
-    play.type = 'button';
-    play.textContent = 'PLAY';
-    play.addEventListener('click', () => openGame(game));
-    info.appendChild(play);
-  } else {
-    card.addEventListener('click', () => openGame(game));
-  }
-
-  card.appendChild(info);
-  return card;
-}
-
-function renderGames() {
-  const query = searchEl.value.trim().toLowerCase();
-
-  const filtered = allGames.filter(game =>
-    game.title.toLowerCase().includes(query) &&
-    categoryMatches(game, activeCategory)
-  );
-
-  const visible = showAll ? filtered : filtered.slice(0, 20);
-
-  gamesEl.replaceChildren();
-  newEl.replaceChildren();
-
-  visible.forEach((game, index) => {
-    gamesEl.appendChild(createGameCard(game, index));
-  });
-
-  filtered.slice(0, 16).forEach((game, index) => {
-    newEl.appendChild(createGameCard(game, index, true));
-  });
-
-  totalEl.textContent = allGames.length
-    ? allGames.length.toLocaleString() + '+'
-    : '—';
-
-  if (!filtered.length) {
-    statusEl.textContent = allGames.length
-      ? 'No games match your search. Try another name or category.'
-      : 'No games loaded yet.';
-  } else {
-    statusEl.textContent =
-      `Showing ${visible.length} of ${filtered.length.toLocaleString()} matching games`;
-  }
-
-  document.getElementById('viewAll').textContent =
-    showAll ? 'Show Less ↑' : 'View All →';
-}
-
-async function fetchJson(url) {
-  const response = await fetch(url, { method: 'GET' });
-  if (!response.ok) throw new Error('Feed request failed: ' + response.status);
-  return response.json();
-}
-
-async function loadGames() {
-  statusEl.textContent = 'Loading games from GamePix…';
-
-  /*
-    Try a same-origin proxy first. If you have not configured /api/games,
-    the direct GamePix feed is attempted next.
-  */
-  const candidates = [
-    '/api/games?page=1',
-    GAMEPIX_FEED + '1'
-  ];
-
-  let items = [];
-  let lastError = null;
-
-  for (const url of candidates) {
-    try {
-      const data = await fetchJson(url);
-      const found = extractItems(data);
-      if (found.length) {
-        items = found;
-        break;
-      }
-    } catch (error) {
-      lastError = error;
-    }
-  }
-
-  if (!items.length) {
-    statusEl.textContent =
-      'Could not load the feed. The browser may block direct access (CORS). Add a feed proxy and try again.';
-    totalEl.textContent = '—';
-    console.error('GamePix feed error:', lastError);
-    return;
-  }
-
-  allGames = items.map(normalize).filter(game => game.title);
-  renderGames();
-
-  /*
-    The endpoint uses pagination=96. Load page 2 in the background
-    so the page can display more games when the feed supports it.
-  */
-  loadMorePages();
-}
-
-async function loadMorePages() {
-  const extra = [];
-
-  for (const page of [2, 3]) {
-    try {
-      const data = await fetchJson(GAMEPIX_FEED + page);
-      const items = extractItems(data);
-      if (!items.length) break;
-      extra.push(...items.map(normalize));
-    } catch (error) {
-      // The first page remains usable if another page fails.
-      console.warn('GamePix page ' + page + ' could not load:', error);
-      break;
-    }
-  }
-
-  if (extra.length) {
-    const known = new Set(allGames.map(game => game.title + '|' + game.url));
-    for (const game of extra) {
-      const key = game.title + '|' + game.url;
-      if (!known.has(key)) {
-        allGames.push(game);
-        known.add(key);
-      }
-    }
-    renderGames();
-  }
-}
-
-function openGame(game) {
-  if (!game.url) {
-    alert('This game has no playable URL in the feed.');
-    return;
-  }
-
-  let url = game.url;
-  if (url.startsWith('//')) url = 'https:' + url;
-
-  try {
-    const parsed = new URL(url, location.href);
-    if (!['https:', 'http:'].includes(parsed.protocol)) {
-      alert('This game URL is not supported.');
-      return;
-    }
-
-    document.getElementById('playerTitle').textContent = game.title;
-    document.getElementById('frame').src = parsed.href;
-    document.getElementById('player').classList.add('open');
-    document.getElementById('player').setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  } catch (error) {
-    alert('The game URL in the feed is invalid.');
-  }
-}
-
-function closePlayer() {
-  document.getElementById('player').classList.remove('open');
-  document.getElementById('player').setAttribute('aria-hidden', 'true');
-  document.getElementById('frame').src = 'about:blank';
-  document.body.style.overflow = '';
-}
-
-document.getElementById('closePlayer').addEventListener('click', closePlayer);
-
-document.getElementById('player').addEventListener('click', event => {
-  if (event.target.id === 'player') closePlayer();
-});
-
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') closePlayer();
-});
-
-searchEl.addEventListener('input', renderGames);
-
-document.getElementById('viewAll').addEventListener('click', () => {
-  showAll = !showAll;
-  renderGames();
-});
-
-function selectCategory(category) {
-  activeCategory = category || '';
-  showAll = false;
-
-  document.querySelectorAll('[data-category]').forEach(element => {
-    element.classList.toggle(
-      'active',
-      (element.dataset.category || '') === activeCategory
-    );
-  });
-
-  renderGames();
-  document.getElementById('popular').scrollIntoView({ behavior: 'smooth' });
-}
-
-document.querySelectorAll('[data-category]').forEach(element => {
-  element.addEventListener('click', event => {
-    event.preventDefault();
-    selectCategory(element.dataset.category || '');
-  });
-});
-
-document.querySelectorAll('.ranktabs button').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.ranktabs button').forEach(item => {
-      item.classList.remove('active');
-    });
-    button.classList.add('active');
-  });
-});
-
-document.getElementById('loginBtn').addEventListener('click', () => {
-  alert('Login and real player accounts need an authentication backend.');
-});
-
-loadGames();
+function closeGame(){$('player').classList.remove('show');$('frame').src='about:blank';document.body.style.overflow=''}
+$('closePlayer').onclick=closeGame;$('player').onclick=e=>{if(e.target.id==='player')closeGame()};
+$('search').addEventListener('input',render);
+$('loadMore').onclick=loadPage;
+$('favToggle').onclick=()=>{showFavs=!showFavs;render();$('gameSection').scrollIntoView({behavior:'smooth'})};
+$('random').onclick=()=>{const list=filtered();if(list.length)openGame(list[Math.floor(Math.random()*list.length)]);else alert('No games in this filter yet.')};
+document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{category=b.dataset.cat;showFavs=false;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));render()});
+const modal=$('authModal');
+$('openAuth').onclick=()=>{modal.classList.add('show');const u=JSON.parse(localStorage.getItem('gpm-user')||'null');if(u){$('username').value=u.name;$('email').value=u.email;$('authHeading').textContent='Your Demo Profile';$('logout').style.display='inline-block'}};
+$('closeAuth').onclick=()=>modal.classList.remove('show');
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove('show')};
+$('signIn').onclick=()=>{
+ const name=$('username').value.trim(),email=$('email').value.trim(),password=$('password').value;
+ if(!name||password.length<4){$('authMsg').textContent='Enter a gamer name and a demo password (4+ characters).';return}
+ const user={name,email};localStorage.setItem('gpm-user',JSON.stringify(user));$('openAuth').textContent='♙ '+name;$('authMsg').textContent='Demo sign-in successful on this device. No password was sent to a server.';$('logout').style.display='inline-block';$('password').value='';
+};
+$('logout').onclick=()=>{localStorage.removeItem('gpm-user');$('openAuth').textContent='♙ Sign In';$('authMsg').textContent='Signed out.';$('logout').style.display='none'};
+const saved=JSON.parse(localStorage.getItem('gpm-user')||'null');if(saved?.name)$('openAuth').textContent='♙ '+saved.name;
+const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!loading&&!finished)loadPage()},{rootMargin:'800px'});
+observer.observe($('loadMore'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeGame();modal.classList.remove('show')}});
+loadPage();
+})();
 </script>
 </body>
 </html>
